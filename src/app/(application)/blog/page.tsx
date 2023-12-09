@@ -20,7 +20,7 @@ export default function BlogPage(): JSX.Element {
         .map((post) => (
           <Link key={post.slug} className="mb-4 flex flex-col space-y-1" href={`/blog/${post.slug}`}>
             <div className="flex w-full flex-col">
-              <p className="tracking-tight">{post.title}</p>
+              <p>{post.title}</p>
               <p className="text-muted-foreground">{post.description}</p>
             </div>
           </Link>
