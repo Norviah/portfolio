@@ -42,7 +42,7 @@ export default makeSource({
   contentDirPath: 'blogs',
   documentTypes: [Blog],
   mdx: {
-    // remarkPlugins: [remarkGfm],
+    remarkPlugins: [remarkGfm],
     rehypePlugins: [
       rehypeSlug,
       [
