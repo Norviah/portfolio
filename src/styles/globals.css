@@ -34,6 +34,10 @@
     --nord-blue:       210 34% 63%; /* #81a1c1 */
     --nord-dark-blue:  213 32% 52%; /* #5d81ac */
     --nord-purple:     311 20% 63%; /* #b48ead */
+    
+    --newspaper-light: 0 0% 45%;
+    --newspaper-muted: 180 1% 30%;
+  	--newspaper-gray: 0 0% 60%;
 
     --destructive: var(--nord-red);
     --success: var(--nord-green);
@@ -48,10 +52,12 @@
     --secondary: var(--gray-500);
 
     --background: var(--gray-50);
-    --foreground: var(--gray-900);
+    --foreground: var(--newspaper-light);
+    --foreground-pop: var(--gray-900);
+    --foreground-selected: var(--gray-100);
 
     --muted: var(--gray-100);
-    --muted-foreground: var(--gray-400);
+    --muted-foreground: var(--gray-300);
 
     --border: var(--gray-150);
     --input: var(--gray-100);
@@ -79,11 +85,12 @@
     --secondary: var(--gray-400);
 
     --background: var(--gray-1000);
-    --foreground: var(--gray-200);
+    --foreground: var(--newspaper-gray);
+    --foreground-pop: var(--gray-200);
     --foreground-selected: var(--gray-800);
 
-    --muted: var(--gray-900);
-    --muted-foreground: var(--gray-750);
+    --muted: var(--gray-950);
+    --muted-foreground: var(--newspaper-muted);
 
     --accent: var(--gray-900);
     --accent-foreground: var(--gray-100);

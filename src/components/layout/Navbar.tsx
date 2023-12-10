@@ -53,7 +53,7 @@ function NavItem({ route }: { route: Route }): JSX.Element {
     <Link
       key={route.path}
       href={route.path}
-      className={cn('flex align-middle transition-all', isActive ? 'text-foreground' : 'text-muted-foreground')}
+      className={cn('flex align-middle transition-all', isActive ? 'text-foreground-pop' : 'text-muted-foreground')}
     >
       <span className="relative px-2 py-1">
         {route.name}

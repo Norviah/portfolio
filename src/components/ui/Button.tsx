@@ -20,7 +20,7 @@ const buttonVariants = cva(
         secondary: 'bg-secondary text-secondary-foreground shadow hover:bg-secondary/90 active:bg-secondary/50 shadow-md',
         success: 'bg-success text-success-foreground shadow hover:bg-success/90 active:bg-success/50 shadow-md',
         warn: 'bg-warn text-warn-foreground shadow hover:bg-warn/90 active:bg-warn/50 shadow-md',
-        ghost: 'hover:bg-accent/70 active:bg-accent hover:text-accent-foreground',
+        ghost: 'hover:bg-muted/70 active:bg-muted hover:text-foreground-pop',
         icon: 'text-foreground focus-visible:ring-transparent hover:bg-accent/70',
         link: 'text-primary underline-offset-4 hover:underline',
       },
