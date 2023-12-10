@@ -1,5 +1,7 @@
-import { allBlogs } from 'contentlayer/generated';
 import Link from 'next/link';
+
+import { Header } from '@/components/ui/typography/Header';
+import { allBlogs } from 'contentlayer/generated';
 
 export const metadata = {
   title: 'Blog',
@@ -9,7 +11,9 @@ export const metadata = {
 export default function BlogPage(): JSX.Element {
   return (
     <section>
-      <h1 className="mb-8 text-2xl font-medium tracking-tighter">read my blog</h1>
+      <Header type="h2" className="mb-8">
+        read my blog
+      </Header>
       {allBlogs
         .sort((a, b) => {
           if (new Date(a.publishedAt) > new Date(b.publishedAt)) {

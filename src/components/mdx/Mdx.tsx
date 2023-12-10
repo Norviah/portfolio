@@ -1,8 +1,11 @@
 import Image from 'next/image';
-import * as React from 'react';
+import React from 'react';
 
 import { Callout } from '@/components/mdx/Callout';
 import { MdxCard } from '@/components/mdx/Card';
+import { CodeBlock } from '@/components/ui/typography/CodeBlock';
+import { Header } from '@/components/ui/typography/Header';
+
 import { cn } from '@/utils/cn';
 import { useMDXComponent } from 'next-contentlayer/hooks';
 
@@ -11,34 +14,34 @@ import type { ClassNameValue } from 'tailwind-merge';
 
 const components: MDXComponents = {
   h1: ({ className, ...props }: React.DetailedHTMLProps<React.HTMLAttributes<HTMLHeadingElement>, HTMLHeadingElement>) => (
-    <h1 className={cn('mt-2 scroll-m-20 border-b text-4xl font-bold tracking-tight', className)} {...props} />
+    <Header type="h1" className={cn('mt-2 scroll-m-20 border-b', className)} {...props} />
   ),
 
   h2: ({ className, ...props }: React.DetailedHTMLProps<React.HTMLAttributes<HTMLHeadingElement>, HTMLHeadingElement>) => (
-    <h2 className={cn('mt-10 scroll-m-20 pb-1 text-3xl font-semibold tracking-tight first:mt-0', className)} {...props} />
+    <Header type="h2" className={cn('mt-10 scroll-m-20 pb-1 first:mt-0', className)} {...props} />
   ),
 
   h3: ({ className, ...props }: React.DetailedHTMLProps<React.HTMLAttributes<HTMLHeadingElement>, HTMLHeadingElement>) => (
-    <h3 className={cn('mt-8 scroll-m-20 text-2xl font-semibold tracking-tight', className)} {...props} />
+    <Header type="h3" className={cn('mt-8 scroll-m-20', className)} {...props} />
   ),
 
   h4: ({ className, ...props }: React.DetailedHTMLProps<React.HTMLAttributes<HTMLHeadingElement>, HTMLHeadingElement>) => (
-    <h4 className={cn('mt-8 scroll-m-20 text-xl font-semibold tracking-tight', className)} {...props} />
+    <Header type="h4" className={cn('mt-8 scroll-m-20', className)} {...props} />
   ),
 
   h5: ({ className, ...props }: React.DetailedHTMLProps<React.HTMLAttributes<HTMLHeadingElement>, HTMLHeadingElement>) => (
-    <h5 className={cn('mt-8 scroll-m-20 text-lg font-semibold tracking-tight', className)} {...props} />
+    <Header type="h5" className={cn('mt-8 scroll-m-20', className)} {...props} />
   ),
 
   h6: ({ className, ...props }: React.DetailedHTMLProps<React.HTMLAttributes<HTMLHeadingElement>, HTMLHeadingElement>) => (
-    <h6 className={cn('mt-8 scroll-m-20 text-base font-semibold tracking-tight', className)} {...props} />
+    <Header type="h6" className={cn('mt-8 scroll-m-20', className)} {...props} />
   ),
 
   a: ({
     className,
     ...props
   }: React.DetailedHTMLProps<React.AnchorHTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement>) => (
-    <a className={cn('font-medium underline underline-offset-4', className)} {...props} />
+    <a className={cn('font-bold text-foreground-pop underline underline-offset-4', className)} {...props} />
   ),
 
   p: ({
@@ -106,7 +109,11 @@ const components: MDXComponents = {
   ),
 
   code: ({ className, ...props }: React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>) => (
-    <code className={cn(' rounded border px-[0.3rem] py-[0.2rem] font-mono text-sm', className)} {...props} />
+    <CodeBlock {...props} />
+  ),
+
+  strong: ({ className, ...props }: React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>) => (
+    <strong className={cn('text-foreground-pop', className)} {...props} />
   ),
 
   codeblock: ({ className, ...props }: { className: ClassNameValue }) => (
