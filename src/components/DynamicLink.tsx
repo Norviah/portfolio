@@ -11,7 +11,7 @@ export function DynamicLink({
   className,
   href,
   ...props
-}: LinkProps<unknown> & { href: Routes | string; className?: ClassNameValue }): JSX.Element {
+}: Omit<LinkProps<unknown>, 'href'> & { href: Routes | string; className?: ClassNameValue }): JSX.Element {
   const defaultClass: ClassNameValue = 'text-foreground-pop underline underline-offset-4';
 
   if (href.startsWith('/')) {
