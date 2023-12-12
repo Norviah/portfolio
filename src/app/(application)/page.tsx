@@ -8,8 +8,9 @@ export default function Page(): JSX.Element {
         hey, I&apos;m Norviah 👋
       </Header>
       <p>
-        I&apos;m a full-stack developer who strives to create simple and useful tools for others to use. Other than
-        programming, I also enjoy <DynamicLink href="https://photos.norviah.com">taking photos</DynamicLink>.
+        I&apos;m a full-stack developer who focuses on creating projects that others can use and build upon, with a strive
+        for documentation. Outside of programming, I have a passion for both music and{' '}
+        <DynamicLink href="https://photos.norviah.com">photography</DynamicLink>.
       </p>
     </section>
   );
