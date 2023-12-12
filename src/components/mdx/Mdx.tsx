@@ -1,10 +1,15 @@
 import Image from 'next/image';
 import React from 'react';
 
+import { Link } from '@/components/Link';
 import { Callout } from '@/components/mdx/Callout';
 import { MdxCard } from '@/components/mdx/Card';
+import { Separator } from '@/components/ui/Separator';
 import { CodeBlock } from '@/components/ui/typography/CodeBlock';
 import { Header } from '@/components/ui/typography/Header';
+import { OrderedList } from '@/components/ui/typography/OrderedList';
+import { UnorderedList } from '@/components/ui/typography/UnorderedList';
+import { Blockquote } from '../ui/typography/Blockquote';
 
 import { cn } from '@/utils/cn';
 import { useMDXComponent } from 'next-contentlayer/hooks';
@@ -37,11 +42,8 @@ const components: MDXComponents = {
     <Header type="h6" className={cn('mt-8 scroll-m-20', className)} {...props} />
   ),
 
-  a: ({
-    className,
-    ...props
-  }: React.DetailedHTMLProps<React.AnchorHTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement>) => (
-    <a className={cn('font-bold text-foreground-pop underline underline-offset-4', className)} {...props} />
+  a: ({ href, ...props }: React.DetailedHTMLProps<React.AnchorHTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement>) => (
+    <Link href={href!} {...props} />
   ),
 
   p: ({
@@ -51,23 +53,16 @@ const components: MDXComponents = {
     <p className={cn('leading-7 [&:not(:first-child)]:mt-6', className)} {...props} />
   ),
 
-  ul: ({ className, ...props }: React.DetailedHTMLProps<React.HTMLAttributes<HTMLUListElement>, HTMLUListElement>) => (
-    <ul className={cn('my-6 ml-6 list-disc marker:text-muted-foreground', className)} {...props} />
+  ul: (props: React.DetailedHTMLProps<React.HTMLAttributes<HTMLUListElement>, HTMLUListElement>) => (
+    <UnorderedList {...props} />
   ),
 
-  ol: ({ className, ...props }: React.DetailedHTMLProps<React.HTMLAttributes<HTMLOListElement>, HTMLOListElement>) => (
-    <ol className={cn('my-6 ml-6 list-decimal marker:text-muted-foreground', className)} {...props} />
+  ol: (props: React.DetailedHTMLProps<React.HTMLAttributes<HTMLOListElement>, HTMLOListElement>) => (
+    <OrderedList {...props} />
   ),
 
-  li: ({ className, ...props }: React.DetailedHTMLProps<React.HTMLAttributes<HTMLLIElement>, HTMLLIElement>) => (
-    <li className={cn('mt-2', className)} {...props} />
-  ),
-
-  blockquote: ({
-    className,
-    ...props
-  }: React.DetailedHTMLProps<React.HTMLAttributes<HTMLQuoteElement>, HTMLQuoteElement>) => (
-    <blockquote className={cn('mt-6 border-l-2 pl-6 italic [&>*]:text-muted-foreground', className)} {...props} />
+  blockquote: (props: React.DetailedHTMLProps<React.HTMLAttributes<HTMLQuoteElement>, HTMLQuoteElement>) => (
+    <Blockquote {...props} />
   ),
 
   img: ({ className, alt, ...props }: React.ImgHTMLAttributes<HTMLImageElement>) => (
@@ -75,7 +70,7 @@ const components: MDXComponents = {
     <img className={cn('rounded-md border', className)} alt={alt} {...props} />
   ),
 
-  hr: ({ ...props }) => <hr className="my-4 md:my-8" {...props} />,
+  hr: () => <Separator className="my-4 md:my-8" />,
 
   table: ({ className, ...props }: React.HTMLAttributes<HTMLTableElement>) => (
     <div className="my-6 w-full overflow-y-auto">

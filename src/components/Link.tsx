@@ -8,7 +8,11 @@ import type { UrlObject } from 'url';
 type Routes = Exclude<LinkProps<unknown>['href'], UrlObject>;
 type Props = LinkProps<unknown>;
 
-export function Link({ className, href, ...props }: Omit<Props, 'href'> & { href: Routes }): JSX.Element {
+export function Link({
+  className,
+  href,
+  ...props
+}: Omit<Props, 'href'> & { href: Routes | string; className?: ClassNameValue }): JSX.Element {
   const defaultClass: ClassNameValue = 'text-foreground-pop underline underline-offset-4';
 
   if (href.startsWith('/')) {
