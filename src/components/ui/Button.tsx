@@ -21,7 +21,7 @@ const buttonVariants = cva(
         success: 'bg-success text-success-foreground shadow hover:bg-success/90 active:bg-success/50 shadow-md',
         warn: 'bg-warn text-warn-foreground shadow hover:bg-warn/90 active:bg-warn/50 shadow-md',
         ghost: 'hover:bg-muted/70 active:bg-muted hover:text-foreground-pop',
-        icon: 'text-foreground focus-visible:ring-transparent hover:bg-accent/70',
+        icon: 'text-foreground focus-visible:ring-transparent hover:bg-accent/70 hover:text-foreground-pop transition-colors',
         link: 'text-primary underline-offset-4 hover:underline',
       },
       size: {
