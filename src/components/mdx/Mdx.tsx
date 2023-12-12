@@ -100,7 +100,7 @@ const components: MDXComponents = {
   ),
 
   pre: ({ className, ...props }: React.DetailedHTMLProps<React.HTMLAttributes<HTMLPreElement>, HTMLPreElement>) => (
-    <pre className={cn('mb-4 mt-6 overflow-x-auto rounded-lg border bg-red-50 p-5', className)} {...props} />
+    <pre className={cn('mb-4 mt-6 overflow-x-auto rounded-lg bg-muted p-5 [&>code]:bg-transparent', className)} {...props} />
   ),
 
   code: ({ className, ...props }: React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>) => (
