@@ -13,8 +13,8 @@ export default function BlogPage(): JSX.Element {
 
   return (
     <main className="mb-10">
-      <header className="flex items-center text-muted-foreground">
-        <button className="h-9 w-12 text-left">date</button>
+      <header className="mb-2 flex items-center text-muted-foreground">
+        <span className="w-12 text-left">date</span>
         <span className="grow pl-2">title</span>
       </header>
 
