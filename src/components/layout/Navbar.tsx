@@ -2,8 +2,10 @@
 
 import Link from 'next/link';
 
+import { GithubIcon } from 'lucide-react';
 import { Suspense } from 'react';
-import { ThemeSelector } from '../ThemeSelector';
+import { ThemeSelector } from '@/components/ThemeSelector';
+import { Button } from '@/components/ui/Button';
 
 import { cn } from '@/utils/cn';
 import { LayoutGroup, motion } from 'framer-motion';
@@ -33,7 +35,14 @@ export function Navbar(): JSX.Element {
                 })}
               </Suspense>
             </div>
-            <ThemeSelector />
+            <div className="flex gap-2">
+              <Button variant="icon" size="icon">
+                <a href="https://github.com/norviah">
+                  <GithubIcon className="h-5 w-5" />
+                </a>
+              </Button>
+              <ThemeSelector />
+            </div>
           </nav>
         </LayoutGroup>
       </div>
