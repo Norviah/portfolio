@@ -2,20 +2,19 @@
 
 import Link from 'next/link';
 
-import { GithubIcon } from 'lucide-react';
-import { Suspense } from 'react';
 import { ThemeSelector } from '@/components/ThemeSelector';
 import { Button } from '@/components/ui/Button';
+import { LayoutGroup, motion } from 'framer-motion';
+import { GithubIcon } from 'lucide-react';
+import { Suspense } from 'react';
 
 import { cn } from '@/utils/cn';
-import { LayoutGroup, motion } from 'framer-motion';
 import { usePathname } from 'next/navigation';
 
 import type { Route } from '@/types/Route';
 
 const navItems: Route[] = [
   { name: 'home', path: '/' },
-  { name: 'work', path: '/work' },
   { name: 'blog', path: '/blog' },
 ];
 
@@ -51,12 +50,8 @@ export function Navbar(): JSX.Element {
 }
 
 function NavItem({ route }: { route: Route }): JSX.Element {
-  let pathname = usePathname() || '/';
-  if (pathname.includes('/blog/')) {
-    pathname = '/blog';
-  }
-
-  const isActive = route.path === pathname;
+  const pathname = usePathname() || '/';
+  const isActive = route.path === '/' ? route.path === pathname : pathname.startsWith(route.path);
 
   return (
     <Link
@@ -66,7 +61,7 @@ function NavItem({ route }: { route: Route }): JSX.Element {
     >
       <span className="relative px-2 py-1">
         {route.name}
-        {route.path === pathname ? (
+        {isActive ? (
           <motion.div
             className="absolute inset-0 top-7 z-[-1] mx-2 h-[1px] bg-border"
             layoutId="sidebar"
