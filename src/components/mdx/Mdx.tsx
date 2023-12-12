@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import React from 'react';
 
-import { Link } from '@/components/Link';
+import { DynamicLink } from '@/components/DynamicLink';
 import { Callout } from '@/components/mdx/Callout';
 import { MdxCard } from '@/components/mdx/Card';
 import { Separator } from '@/components/ui/Separator';
@@ -43,7 +43,7 @@ const components: MDXComponents = {
   ),
 
   a: ({ href, ...props }: React.DetailedHTMLProps<React.AnchorHTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement>) => (
-    <Link href={href!} {...props} />
+    <DynamicLink href={href!} {...props} />
   ),
 
   p: ({

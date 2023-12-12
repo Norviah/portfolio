@@ -1,4 +1,4 @@
-import { Link } from '@/components/Link';
+import { DynamicLink } from '@/components/DynamicLink';
 import { Header } from '@/components/ui/typography/Header';
 
 export default function Page(): JSX.Element {
@@ -9,7 +9,7 @@ export default function Page(): JSX.Element {
       </Header>
       <p>
         I&apos;m a full-stack developer who strives to create simple and useful tools for others to use. Other than
-        programming, I also enjoy <Link href="https://photos.norviah.com">taking photos</Link>.
+        programming, I also enjoy <DynamicLink href="https://photos.norviah.com">taking photos</DynamicLink>.
       </p>
     </section>
   );
