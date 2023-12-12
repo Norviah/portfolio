@@ -1,12 +1,8 @@
 ## Unreleased
 
-### Refactored
-
-- set mdx component to use shadcn components <code>[c611233](https://github.com/Norviah/portfolio.git/commit/c611233361416fc8b034d7083d1b013d8a771381)</code>
-
-- **components/ThemeSelector**: refactor component to a toggle button <code>[3f02bb9](https://github.com/Norviah/portfolio.git/commit/3f02bb90c4a7751d68ef6a8160a899bdfa9719d2)</code>
-
 ### UI
+
+- **components/BlogTable**: render the `date` header in a `span` element <code>[1579e4e](https://github.com/Norviah/portfolio.git/commit/1579e4e9280281c9f108060e00f9c4ebbdbf3af1)</code>
 
 - **components/UnorderedList**: mute the color of the marker <code>[c892b60](https://github.com/Norviah/portfolio.git/commit/c892b603fbe48ee2c4857169a76e099700e6de00)</code>
 
@@ -24,11 +20,19 @@
 
 ### Features
 
+- **pages/blog**: render blogs within a table <code>[c3959e2](https://github.com/Norviah/portfolio.git/commit/c3959e20cd186e680e6b1a5209a0df6268b5ef3b)</code>
+
 - **components/ThemeSelector**: set the tooltip's state to reflect if the mouse is hovering over the element <code>[385fb31](https://github.com/Norviah/portfolio.git/commit/385fb311b68343a0b0b1a2beee2fa63e94b7f945)</code>
 
 - **components**: implement a `Link` component to dynamically use the correct component <code>[2970629](https://github.com/Norviah/portfolio.git/commit/2970629d5479566f49ebd3d9233e3991b6aa22ad)</code>
 
 - **layout**: add link to github repo on navbar <code>[10e608a](https://github.com/Norviah/portfolio.git/commit/10e608a69c61944580320c2d476fd939406a78b3)</code>
+
+### Refactored
+
+- set mdx component to use shadcn components <code>[c611233](https://github.com/Norviah/portfolio.git/commit/c611233361416fc8b034d7083d1b013d8a771381)</code>
+
+- **components/ThemeSelector**: refactor component to a toggle button <code>[3f02bb9](https://github.com/Norviah/portfolio.git/commit/3f02bb90c4a7751d68ef6a8160a899bdfa9719d2)</code>
 
 ### Bug Fixes
 
