@@ -2,79 +2,110 @@
 title: Conventional Commits
 description: Good practices to help others and your future self.
 publishedAt: 12-12-2023
+updatedAt: 12-14-2023
 ---
 
-We've all seen it: git histories where the commit messages are simply just "fixed
-thing", "updated thing", something random, or even just `.`, at one point or
-another we're all guilty of it. The issue with this naming scheme is that in the
-future you may forget what you were doing, or someone else may need to look at
-your repo but is unable to get a high-level understanding from the commit
-messages, meaning they'll have to read the code which brings another set of
-problems such as whether if it's well documented, structured, etc. 
+We've all seen it: Git histories where commit messages are simply just "fixed
+thing", "updated thing", random text, or even just `.`, at one point or another,
+we're all guilty of it. The issue with this "naming scheme" is that in the
+future, you may forget what you were doing, or someone else may need to look at
+your repository but is unable to get a high-level understanding from the commit
+history, which brings another set of problems as they'll have to read the code
+but is then dependent on whether if the code is well documented, structured,
+etc.
 
-Documentation is applicable to various aspects of a developer lifecycle, from
-comments, to READMEs, to commit messages, good and clear documentation is often
-overlooked and ignored while being a very important part of the development
-process. Implementing good documentation practices is a skill that can help you
-and others in the long run.
+Documentation is applicable to various aspects of a developer lifecyle, from
+variable names and comments, to READMEs and commit messages, good and clear
+documentation is often overlooked and ignored while being a very important part
+of the development process.
 
-While there are various ways to have good documentation, this post will focus on
-writing bettter commit messages and how following the [Conventional Commit
-structure](https://www.conventionalcommits.org/en/v1.0.0/#summary) can help
-commit messages portray the changes made within the commit.
+While there are various ways to have good documentation, this article will focus
+on writing better commit messages by following the [conventional commit
+structure](https://www.conventionalcommits.org/en/v1.0.0) to help
+commit messages convey the changes made within the commit.
 
-### What Are Conventional Commits?
+### What Are Conventional Commits
 
-Conventional commits, or semantic commit messages, are commit messages that
-follow a specific format to help convey the changes made within the commit. The
-format is as follows:
+As specified within the
+[documentation](https://www.conventionalcommits.org/en/v1.0.0/#summary),
+Conventional Commits is a specification for writing standardized commit
+messages by following a format to convey the changes made within the commit.
 
 ```text
 <type>([scope]): <description>
+
+[body]
+
+[footer(s)]
 ```
 
-Each part of the commit has a specific purpose to convey what changes were made:
+Each part of the format has a specific purpose to convey what changes were made:
 
-- **type**: The type of change that was made.
-- **scope**: An optional value you can use to further categorize the change.
-- **description**: A short description of the change made.
+- **type** (required): The type of change that was made, this value should be a
+  noun to describe the change. There are no strict list of types to choose from,
+  you can use any string you feel is best, however, some examples are: `feat`
+  for new features, `fix` for bug fixes, `docs` for documentation changes, etc.
+- **scope** (optional): An optional value you can specify to further categorize
+  the change, often being the section of the codebase that was changed.
+- **description** (required): A short description of the change.
+- **body** (optional): A longer description describing the change
+  in more detail, must be separated from the description by a blank line.
+- **footer** (optional): A footer section that can be used to reference issues
+  or pull requests that are associated with the commit, each footer must be
+  on a newline and must consist of a word followed by either `:[space]` or
+  `[space]#`, followed by a string value.
 
-To further describe the `type` value, there are no strict list of types to
-choose from, you can use any string you feel is best. Some common types are:
+### Why Should We Use Conventional Commits?
 
-- **feat**: Represents a new feature,
-- **fix**: Represents a bug fix,
-- **docs**: Represents documentation changes,
-- **style**: Represents changes that do not affect the code, such as
-  formatting, missing semi-colons, etc.
+There are two main benefits of using conventional commits: readability and
+automation.
 
-To take an example from the documentation, here is an example of this structure:
+Following this structure makes commit messages easily convey the goal of the
+respective commit, making it easier for everyone (including your future self) to
+understand the changes made and where they were made. The format also brings
+consistency to the commit history, allowing for other functionality, such as
+automation.
+
+Beyond clarifying commit messages, the format allows tools to be built on top of
+commit messages, most notably, changelogs. The consistent commit history allows
+tools to read and generate changelogs, as an example, the [changelog for the
+repository of this
+website](https://github.com/Norviah/portfolio/blob/master/CHANGELOG.md) is
+generated by using [bump](https://github.com/Norviah/bump), a tool I created to
+generate changelogs from conventional commits.
+
+### Examples
+
+For example, let's say you:
+
+- added a new feature to send an email to the customer when a product is shipped:
 
 ```text
 feat(api): send an email to the customer when a product is shipped
 ```
 
-- **type**: Here we can see that the type is `feat`, so we know that the commit
-  added a new feature.
-- **scope**: The message also implemented the scope value, which is `api`, so we
-  also know that the commit added a new feature relevant to the project's API.
-- **description**: Here, the commit states that the added feature is to send an
-  email to the customer when a product is shipped.
+- fixed a bug:
 
-From this example, we can easily read the commit message and understand what it
-does.
+```text
+fix: fix a bug that caused a crash when users uploads a photo for their profile
 
-### Why Should We Use Conventional Commits?
+closes: https://github.com/user/repo/issues/1
+```
 
-For a simple change on how commit messages are written, we can present useful
-information on what changes were made and where they were made.
+- update dependencies:
 
-Another benefit of using this format is that it can be used to automate tools on
-top of it, most notably, changelogs. For example, the [changelog for this
-repo](https://github.com/Norviah/portfolio/blob/master/CHANGELOG.md) is
-generated by using [bump](https://github.com/Norviah/bump), a tool I created to
-generate changelogs from conventional commits.
+```text
+chore(deps): update `[package]` to `[version]`
+```
+
+- changed the color for the foreground text of the application's dark theme:
+
+```text
+style(theme): change the dark theme's foreground color to `[color]`
+```
 
 ### Resources
 
-- [Conventional Commits Documentation](https://www.conventionalcommits.org/en/v1.0.0/#summary)
+- [Conventional Commits
+  documentation](https://www.conventionalcommits.org/en/v1.0.0/#summary)
+- https://gist.github.com/levibostian/71afa00ddc69688afebb215faab48fd7
