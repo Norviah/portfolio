@@ -2,7 +2,7 @@
 title: Conventional Commits
 description: Good practices to help others and your future self.
 publishedAt: 12-12-2023
-updatedAt: 12-14-2023
+updatedAt: 12-15-2023
 ---
 
 We've all seen it: Git histories where commit messages are simply just "fixed
@@ -24,12 +24,14 @@ on writing better commit messages by following the [conventional commit
 structure](https://www.conventionalcommits.org/en/v1.0.0) to help
 commit messages convey the changes made within the commit.
 
-### What Are Conventional Commits
+### What Are Conventional Commits?
 
 As specified within the
 [documentation](https://www.conventionalcommits.org/en/v1.0.0/#summary),
 Conventional Commits is a specification for writing standardized commit
 messages by following a format to convey the changes made within the commit.
+
+The format is as follows:
 
 ```text
 <type>([scope]): <description>
@@ -92,13 +94,13 @@ fix: fix a bug that caused a crash when users uploads a photo for their profile
 closes: https://github.com/user/repo/issues/1
 ```
 
-- update dependencies:
+- updated dependencies:
 
 ```text
 chore(deps): update `[package]` to `[version]`
 ```
 
-- changed the color for the foreground text of the application's dark theme:
+- changed the color for the foreground text of your application's dark theme:
 
 ```text
 style(theme): change the dark theme's foreground color to `[color]`
