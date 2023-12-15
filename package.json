@@ -6,6 +6,7 @@
     "start": "next start",
     "lint": "next lint",
     "build": "next build",
+    "build:changelog": "node ./node_modules/@norviah/bump/bin/run changelog generate --config ./.bumprc.json",
     "prettier:check": "node ./node_modules/prettier/bin/prettier.cjs --config .prettierrc.json --list-different ./src",
     "prettier:fix": "node ./node_modules/prettier/bin/prettier.cjs --config .prettierrc.json --write ./src"
   },
