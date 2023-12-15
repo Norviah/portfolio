@@ -33,6 +33,9 @@ export const Blog = defineDocumentType(() => ({
       type: 'string',
       default: true,
     },
+    updatedAt: {
+      type: 'string',
+    },
   },
   computedFields,
 }));
