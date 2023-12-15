@@ -1,12 +1,14 @@
 ## Unreleased
 
-### Bug Fixes
+### Build System
 
-- **components/DynamicLink**: remove the `href` property when extending the base `Link` props <code>[02cb397](https://github.com/Norviah/portfolio/commit/02cb39737c20aa32ba1c9abcc84cada2f923d9a0)</code>
+- **contentlayer**: make the `publishedAt` property required and set the type to `date` <code>[ed8faad](https://github.com/Norviah/portfolio/commit/ed8faad6ac35a28452bf4f2d29edbf3f4f37b536)</code>
 
-- render a blog's date on the client for accurate information <code>[e4c87ff](https://github.com/Norviah/portfolio/commit/e4c87ff0fa8f6e501484cd71f3385975ea5108c5)</code>
+- **contentlayer**: add a new property to reference when a blog has been updated <code>[4785903](https://github.com/Norviah/portfolio/commit/478590309764e81f70191dba90b03ed7feacb0fe)</code>
 
 ### UI
+
+- **mdx**: set the theme of codeblocks to reflect the site's theme <code>[edaed47](https://github.com/Norviah/portfolio/commit/edaed479ce2ab8536267c0c5d1efbcd6dc9cbd60)</code>
 
 - **components/BlogTable**: render the `date` header in a `span` element <code>[1579e4e](https://github.com/Norviah/portfolio/commit/1579e4e9280281c9f108060e00f9c4ebbdbf3af1)</code>
 
@@ -23,6 +25,12 @@
 - lessen padding for smaller screens <code>[03539ce](https://github.com/Norviah/portfolio/commit/03539cea44d25877826b2e0a3721dfd14a401262)</code>
 
 - **theme**: lighten the muted foreground color for light mode <code>[0b35033](https://github.com/Norviah/portfolio/commit/0b35033eeb0b429df90778040b9e4c7b859c1ae6)</code>
+
+### Bug Fixes
+
+- **components/DynamicLink**: remove the `href` property when extending the base `Link` props <code>[02cb397](https://github.com/Norviah/portfolio/commit/02cb39737c20aa32ba1c9abcc84cada2f923d9a0)</code>
+
+- render a blog's date on the client for accurate information <code>[e4c87ff](https://github.com/Norviah/portfolio/commit/e4c87ff0fa8f6e501484cd71f3385975ea5108c5)</code>
 
 ### Features
 
