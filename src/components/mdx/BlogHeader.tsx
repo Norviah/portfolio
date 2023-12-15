@@ -1,5 +1,4 @@
 import { BlogDate } from '@/components/mdx/BlogDate';
-import { Separator } from '@/components/ui/Separator';
 import { Header } from '@/components/ui/typography/Header';
 
 import { cn } from '@/utils/cn';
@@ -12,15 +11,12 @@ interface BlogHeaderProps extends React.HTMLAttributes<HTMLDivElement> {
 
 export function BlogHeader({ blog, className, ...props }: BlogHeaderProps): JSX.Element {
   return (
-    <>
-      <div className={cn('space-y-4', className)} {...props}>
-        <Header type="h2">{blog.title}</Header>
-        <div className="flex justify-between">
-          <p className="text-muted-foreground">{blog.description}</p>
-          <BlogDate date={blog.publishedAt} />
-        </div>
+    <div className={cn('space-y-4', className)} {...props}>
+      <Header type="h2">{blog.title}</Header>
+      <div className="flex justify-between">
+        <p className="text-muted-foreground">{blog.description}</p>
+        <BlogDate date={blog.publishedAt} />
       </div>
-      <Separator className="my-4" />
-    </>
+    </div>
   );
 }

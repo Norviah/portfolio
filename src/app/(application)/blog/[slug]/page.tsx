@@ -80,9 +80,9 @@ export default function BlogPage({ params }: PageProps): JSX.Element {
 
   return (
     <div>
-      <BlogHeader blog={blog} />
+      <BlogHeader blog={blog} className="mb-10" />
       <Mdx code={blog.body.code} />
-      <Separator className="my-5" />
+      <Separator className="mt-10" />
       <div className="flex justify-center py-6 lg:py-10">
         <Link href="/blog" className={cn(buttonVariants({ variant: 'ghost' }))}>
           <ChevronLeftIcon className="mr-2 h-4 w-4" />
