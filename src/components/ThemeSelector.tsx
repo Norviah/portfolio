@@ -39,7 +39,7 @@ export function ThemeSelector(): JSX.Element {
           </Button>
         </TooltipTrigger>
         <TooltipContent>
-          <p>{`Theme: ${theme.name} Mode`}</p>
+          <p className="text-sm">{`${theme.name} Mode`}</p>
         </TooltipContent>
       </Tooltip>
     </TooltipProvider>
