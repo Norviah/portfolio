@@ -1,12 +1,8 @@
 ## Unreleased
 
-### Build System
-
-- **contentlayer**: make the `publishedAt` property required and set the type to `date` <code>[ed8faad](https://github.com/Norviah/portfolio/commit/ed8faad6ac35a28452bf4f2d29edbf3f4f37b536)</code>
-
-- **contentlayer**: add a new property to reference when a blog has been updated <code>[4785903](https://github.com/Norviah/portfolio/commit/478590309764e81f70191dba90b03ed7feacb0fe)</code>
-
 ### UI
+
+- **components/ThemeSelector**: increase font size for label <code>[9ed28a4](https://github.com/Norviah/portfolio/commit/9ed28a448bcd69d4ba18d19caef37ac825e0d2b3)</code>
 
 - **mdx**: set the theme of codeblocks to reflect the site's theme <code>[edaed47](https://github.com/Norviah/portfolio/commit/edaed479ce2ab8536267c0c5d1efbcd6dc9cbd60)</code>
 
@@ -25,6 +21,12 @@
 - lessen padding for smaller screens <code>[03539ce](https://github.com/Norviah/portfolio/commit/03539cea44d25877826b2e0a3721dfd14a401262)</code>
 
 - **theme**: lighten the muted foreground color for light mode <code>[0b35033](https://github.com/Norviah/portfolio/commit/0b35033eeb0b429df90778040b9e4c7b859c1ae6)</code>
+
+### Build System
+
+- **contentlayer**: make the `publishedAt` property required and set the type to `date` <code>[ed8faad](https://github.com/Norviah/portfolio/commit/ed8faad6ac35a28452bf4f2d29edbf3f4f37b536)</code>
+
+- **contentlayer**: add a new property to reference when a blog has been updated <code>[4785903](https://github.com/Norviah/portfolio/commit/478590309764e81f70191dba90b03ed7feacb0fe)</code>
 
 ### Bug Fixes
 
