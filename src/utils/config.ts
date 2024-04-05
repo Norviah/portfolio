@@ -1,5 +1,5 @@
-import localFont from 'next/font/local';
 import { env } from '@/utils/env';
+import localFont from 'next/font/local';
 
 import type { Metadata } from 'next';
 

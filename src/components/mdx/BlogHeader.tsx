@@ -12,9 +12,9 @@ interface BlogHeaderProps extends React.HTMLAttributes<HTMLDivElement> {
 export function BlogHeader({ blog, className, ...props }: BlogHeaderProps): JSX.Element {
   return (
     <div className={cn('space-y-4', className)} {...props}>
-      <Header type="h2">{blog.title}</Header>
-      <div className="flex justify-between">
-        <p className="text-muted-foreground">{blog.description}</p>
+      <Header type='h2'>{blog.title}</Header>
+      <div className='flex justify-between'>
+        <p className='text-muted-foreground'>{blog.description}</p>
         <BlogDate date={blog.publishedAt} />
       </div>
     </div>

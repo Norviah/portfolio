@@ -1,5 +1,5 @@
-import { Slot } from '@radix-ui/react-slot';
 import { SpinnerIcon } from '@/components/icons/Spinner';
+import { Slot } from '@radix-ui/react-slot';
 
 import { cn } from '@/utils/cn';
 import { cva } from 'class-variance-authority';
@@ -13,12 +13,16 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: 'bg-primary text-primary-foreground hover:bg-primary/90 active:bg-primary/50 shadow-md',
-        destructive: 'bg-destructive text-destructive-foreground hover:bg-destructive/90 active:bg-destructive/50 shadow-md',
+        default:
+          'bg-primary text-primary-foreground hover:bg-primary/90 active:bg-primary/50 shadow-md',
+        destructive:
+          'bg-destructive text-destructive-foreground hover:bg-destructive/90 active:bg-destructive/50 shadow-md',
         outline:
           'border border-input bg-transparent shadow-sm hover:bg-card-accent hover:text-accent-foreground hover:bg-accent/90 active:bg-accent/50',
-        secondary: 'bg-secondary text-secondary-foreground shadow hover:bg-secondary/90 active:bg-secondary/50 shadow-md',
-        success: 'bg-success text-success-foreground shadow hover:bg-success/90 active:bg-success/50 shadow-md',
+        secondary:
+          'bg-secondary text-secondary-foreground shadow hover:bg-secondary/90 active:bg-secondary/50 shadow-md',
+        success:
+          'bg-success text-success-foreground shadow hover:bg-success/90 active:bg-success/50 shadow-md',
         warn: 'bg-warn text-warn-foreground shadow hover:bg-warn/90 active:bg-warn/50 shadow-md',
         ghost: 'hover:bg-muted/70 active:bg-muted hover:text-foreground-pop',
         icon: 'text-foreground focus-visible:ring-transparent hover:bg-accent/70 hover:text-foreground-pop transition-colors',
@@ -35,10 +39,12 @@ const buttonVariants = cva(
       variant: 'default',
       size: 'default',
     },
-  }
+  },
 );
 
-export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement>, VariantProps<typeof buttonVariants> {
+export interface ButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+    VariantProps<typeof buttonVariants> {
   asChild?: boolean;
   loading?: boolean;
 }
@@ -58,7 +64,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
           <SpinnerIcon
             className={cn(
               'h-4 w-4 animate-spin',
-              variant === 'ghost' || variant === 'outline' ? 'text-foreground' : 'text-background'
+              variant === 'ghost' || variant === 'outline' ? 'text-foreground' : 'text-background',
             )}
           />
         ) : (
@@ -66,7 +72,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         )}
       </Comp>
     );
-  }
+  },
 );
 Button.displayName = 'Button';
 

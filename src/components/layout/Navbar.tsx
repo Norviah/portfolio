@@ -20,24 +20,24 @@ const navItems: Route[] = [
 
 export function Navbar(): JSX.Element {
   return (
-    <aside className="-ml-[8px] mb-16 tracking-tight">
-      <div className="lg:sticky lg:top-20">
+    <aside className='-ml-[8px] mb-16 tracking-tight'>
+      <div className='lg:sticky lg:top-20'>
         <LayoutGroup>
           <nav
-            className="fade relative flex scroll-pr-6 flex-row items-start justify-between px-0 pb-0 md:relative md:overflow-auto"
-            id="nav"
+            className='fade relative flex scroll-pr-6 flex-row items-start justify-between px-0 pb-0 md:relative md:overflow-auto'
+            id='nav'
           >
-            <div className="flex flex-row space-x-0 pr-10">
+            <div className='flex flex-row space-x-0 pr-10'>
               <Suspense fallback={null}>
-                {navItems.map((route: Route, index: number) => {
-                  return <NavItem key={index} route={route} />;
+                {navItems.map((route: Route) => {
+                  return <NavItem key={route.path} route={route} />;
                 })}
               </Suspense>
             </div>
-            <div className="flex gap-2">
-              <Button variant="icon" size="icon">
-                <a href="https://github.com/norviah">
-                  <GithubIcon className="h-5 w-5" />
+            <div className='flex gap-2'>
+              <Button variant='icon' size='icon'>
+                <a href='https://github.com/norviah'>
+                  <GithubIcon className='h-5 w-5' />
                 </a>
               </Button>
               <ThemeSelector />
@@ -57,14 +57,17 @@ function NavItem({ route }: { route: Route }): JSX.Element {
     <Link
       key={route.path}
       href={route.path}
-      className={cn('flex align-middle transition-all', isActive ? 'text-foreground-pop' : 'text-muted-foreground')}
+      className={cn(
+        'flex align-middle transition-all',
+        isActive ? 'text-foreground-pop' : 'text-muted-foreground',
+      )}
     >
-      <span className="relative px-2 py-1">
+      <span className='relative px-2 py-1'>
         {route.name}
         {isActive ? (
           <motion.div
-            className="absolute inset-0 top-7 z-[-1] mx-2 h-[1px] bg-border"
-            layoutId="sidebar"
+            className='absolute inset-0 top-7 z-[-1] mx-2 h-[1px] bg-border'
+            layoutId='sidebar'
             transition={{
               type: 'spring',
               stiffness: 350,

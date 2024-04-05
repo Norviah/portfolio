@@ -31,7 +31,7 @@ export function Header(props: HeaderProps): JSX.Element {
         headerVariants({
           type: props.type,
         }),
-        props.className
+        props.className,
       )}
     >
       {props.children}

@@ -1,5 +1,5 @@
+import type { UrlObject } from 'node:url';
 import type { LinkProps } from 'next/link';
-import type { UrlObject } from 'url';
 
 export interface Route {
   name: string;

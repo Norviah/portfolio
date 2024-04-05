@@ -16,9 +16,14 @@ export const metadata: Metadata = config.metadata;
 
 export default function RootLayout(props: LayoutProps): JSX.Element {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang='en' suppressHydrationWarning>
       <body className={cn('min-h-screen antialiased', config.font.className)}>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+        <ThemeProvider
+          attribute='class'
+          defaultTheme='system'
+          enableSystem
+          disableTransitionOnChange
+        >
           {props.children}
         </ThemeProvider>
         <TailwindIndicator />

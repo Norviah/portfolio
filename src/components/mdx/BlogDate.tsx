@@ -8,7 +8,7 @@ function formatDate(date: string): string {
   const monthsAgo: number = currentDate.getMonth() - targetDate.getMonth();
   const daysAgo: number = currentDate.getDate() - targetDate.getDate();
 
-  let formattedDate: string = '';
+  let formattedDate = '';
 
   if (yearsAgo > 0) {
     formattedDate = `${yearsAgo}y ago`;
@@ -31,7 +31,7 @@ function formatDate(date: string): string {
 
 export function BlogDate({ date }: { date: string }): JSX.Element {
   return (
-    <p className="text-muted-foreground" suppressHydrationWarning>
+    <p className='text-muted-foreground' suppressHydrationWarning>
       {formatDate(date)}
     </p>
   );
