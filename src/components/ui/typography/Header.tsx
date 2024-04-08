@@ -23,7 +23,7 @@ export interface HeaderProps extends BaseHeaderProps, VariantProps<typeof header
   type: Headers;
 }
 
-export function Header(props: HeaderProps): JSX.Element {
+export function Header({ className, children, ...props }: HeaderProps): JSX.Element {
   return (
     <props.type
       {...props}
@@ -31,10 +31,10 @@ export function Header(props: HeaderProps): JSX.Element {
         headerVariants({
           type: props.type,
         }),
-        props.className,
+        className,
       )}
     >
-      {props.children}
+      {children}
     </props.type>
   );
 }
